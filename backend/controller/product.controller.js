@@ -17,7 +17,7 @@ const listFood = async (req, res) => {
 const addFood = async (req, res) => {
 
     try {
-        let image_filename = `${req.file.filename}`
+        const image_filename = req.file ? req.file.filename : req.body.image;
 
         const food = new foodModel({
             name: req.body.name,
