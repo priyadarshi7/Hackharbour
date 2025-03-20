@@ -1,0 +1,30 @@
+[
+  {
+    "message": "I orderd glasses they came broken i want to replace them",
+    "customer_name": null,
+    "contact_info": null,
+    "visit_date": null,
+    "issue_category": "other",
+    "severity": "medium",
+    "location_in_park": "unknown",
+    "timestamp": "2025-03-20T20:17:28.782931",
+    "status": "new",
+    "assigned_to": null,
+    "resolution": null,
+    "resolution_date": null
+  },
+  {
+    "message": "My drumstick was broken when the order was recieved kindly replace it my name is darshan",
+    "customer_name": "darshan",
+    "contact_info": null,
+    "visit_date": null,
+    "issue_category": "other",
+    "severity": "medium",
+    "location_in_park": "unknown",
+    "timestamp": "2025-03-20T20:25:48.387147",
+    "status": "new",
+    "assigned_to": null,
+    "resolution": null,
+    "resolution_date": null
+  }
+]
