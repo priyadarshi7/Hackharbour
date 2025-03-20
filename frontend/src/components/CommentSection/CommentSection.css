@@ -1,0 +1,28 @@
+.comment-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-message {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+  }

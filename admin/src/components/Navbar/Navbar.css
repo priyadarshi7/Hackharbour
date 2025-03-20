@@ -44,7 +44,7 @@
     border-radius: 24px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
+    border: 2px solid #1a472a;
   }
   
   .search-container:focus-within {

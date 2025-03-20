@@ -16,8 +16,8 @@ const Navbar = () => {
       <div className='navbar-center'>
         <div className='search-container'>
           <input type="text" placeholder="Search adventures..." className='search-input' />
-          <button className='search-button'>
-            <img src={assets.search_icon || assets.logo} alt="Search" className='search-icon' />
+          <button className='search-button' style={{color:"white"}}>
+            Search
           </button>
         </div>
       </div>
@@ -25,12 +25,12 @@ const Navbar = () => {
       <div className='navbar-right'>
         <div className='nav-icons'>
           <div className='nav-icon'>
-            <img src={assets.notification_icon || assets.logo} alt="Notifications" />
+            notifications
             <span className='badge'>3</span>
           </div>
-          <div className='nav-icon'>
+          {/* <div className='nav-icon'>
             <img src={assets.message_icon || assets.logo} alt="Messages" />
-          </div>
+          </div> */}
         </div>
         
         <div className='profile-container' onClick={() => setIsMenuOpen(!isMenuOpen)}>
