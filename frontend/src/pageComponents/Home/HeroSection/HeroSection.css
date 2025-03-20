@@ -1,0 +1,451 @@
+@font-face {
+    font-family: Mont;
+    src: url("../../../assets/fonts/Montserrat-VariableFont_wght.ttf");
+  }
+  
+  @font-face {
+    font-family: Anton;
+    src: url("../../../assets/fonts/Anton-Regular.ttf");
+  }
+  
+  .home {
+    background-image: url("../../../assets/parallax/clouds.png");
+    height: 100svh; /* Full viewport height */
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Prevent overflow */
+    z-index: 10;
+    font-family: Mont;
+  }
+  
+  .home-text {
+    color: #1a2e05; /* Dark green for better contrast against clouds */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 14vh;
+    z-index: 4; /* Ensure text is above other elements */
+    text-align: center;
+  }
+  
+  .home-text h5 {
+    font-family: Mont;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  
+  .home-text h1 {
+    font-family: Anton;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #1a2e05, #4a7c10);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.3);
+  }
+  
+  .home-text .subtitle {
+    font-family: Mont;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+    color: white; /* Lighter green */
+  }
+  
+  .explore-btn {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    font-family: Mont;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(45deg, #3d6a0a, #5b8c28);
+  }
+  
+  .buildings {
+    position: absolute;
+    bottom: -10vh;
+    background: url("../../../assets/parallax/mountain.png");
+    height: 70%;
+    width: 100%;
+    background-size: cover;
+    z-index: 1; /* Ensure buildings are behind other elements */
+    transform: translateY(0); /* Start with no offset */
+    transition: transform 0.3s ease-out; /* Smooth transition for parallax effect */
+  }
+  
+  .MUN_gif {
+    position: absolute;
+    z-index: 3;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    transform: translateY(0); /* Start with no offset */
+    transition: transform 0.3s ease-out; /* Smooth transition for parallax effect */
+  }
+  
+  .MUN_gif img {
+    height: 25vh;
+    transition: height 0.2s ease; /* Smooth height transition for responsiveness */
+  }
+  
+  .earth {
+    position: absolute;
+    z-index: 10; /* Ensure earth is above buildings but below MUN_gif */
+    top: 80vh;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .earth img {
+    width: 100%;
+    transition: transform 0.3s ease-out; /* Smooth zoom transition */
+  }
+  
+  .flags {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .flag1 {
+    position: relative;
+    left: 0;
+  }
+  .flag2 {
+    position: relative;
+    right: 0;
+  }
+  
+  .flag1 img {
+    position: absolute;
+    left: 0;
+    top: -18vw;
+    width: 40%;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+  }
+  .flag2 img {
+    position: absolute;
+    right: 0;
+    top: -18vw;
+    width: 40%;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+  }
+  
+  .tiger,
+  .bear,
+  .birds {
+    position: absolute;
+    z-index: 15;
+    width: 20vw;
+    height: 20vh;
+  }
+  
+  .tiger {
+    left: 0;
+    top: 78vh;
+    width: 30vw;
+    height: 25vh;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+  }
+  
+  .bear {
+    right: 0;
+    top: 78vh;
+    width: 30vw;
+    height: 25vh;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+  }
+  
+  .tiger img,
+  .bear img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .tiger:hover img,
+  .bear:hover img {
+    transform: scale(1.05);
+  }
+  
+  .birds {
+    top: 0;
+    left: 0%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+  }
+  
+  .birds img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .flag1 img {
+      top: -28vw;
+      width: 85%;
+      left: -20vw;
+    }
+    .flag2 img {
+      top: -28vw;
+      width: 85%;
+      right: -20vw;
+    }
+  
+    .home-text h1 {
+      font-size: 4rem;
+    }
+  
+    .home-text .subtitle {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 980px) {
+    .MUN_gif img {
+      height: 18vh;
+    }
+    .flag1 img {
+      top: -28vw;
+      width: 90%;
+      left: -20vw;
+    }
+    .flag2 img {
+      top: -28vw;
+      width: 90%;
+      right: -20vw;
+    }
+  
+    .home-text h1 {
+      font-size: 3.5rem;
+    }
+  
+    .home-text .subtitle {
+      font-size: 1.35rem;
+    }
+  
+    .home-text h5 {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tiger,
+    .bear {
+      width: 25vw;
+      height: 20vh;
+    }
+  
+    .birds {
+      width: 30vw;
+      height: 15vh;
+    }
+  
+    .home-text h1 {
+      font-size: 3rem;
+    }
+  
+    .home-text .subtitle {
+      font-size: 1.25rem;
+    }
+  
+    .explore-btn {
+      padding: 0.7rem 1.8rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 660px) {
+    .MUN_gif img {
+      height: 15vh;
+    }
+  
+    .home-text h1 {
+      font-size: 2.75rem;
+    }
+  }
+  
+  @media (max-width: 630px) {
+    .home-text h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 580px) {
+    .home-text h5 {
+      font-size: 0.9rem;
+    }
+  
+    .home-text .subtitle {
+      font-size: 1.1rem;
+    }
+  
+    .flag1 img {
+      top: -28vw;
+      width: 100%;
+      left: -20vw;
+    }
+    .flag2 img {
+      top: -28vw;
+      width: 100%;
+      right: -20vw;
+    }
+  
+    .explore-btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+      margin-top: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tiger,
+    .bear {
+      width: 30vw;
+      height: 18vh;
+    }
+  
+    .birds {
+      width: 40vw;
+      height: 12vh;
+    }
+  
+    .home-text {
+      padding-top: 12vh;
+    }
+  }
+  
+  @media (max-width: 415px) {
+    .MUN_gif img {
+      height: 12vh;
+    }
+    .home-text h1 {
+      font-size: 2.2rem;
+    }
+    .home-text h5 {
+      font-size: 0.8rem;
+    }
+    .home-text .subtitle {
+      font-size: 1rem;
+    }
+    .flag1 img {
+      top: -13vw;
+      width: 90%;
+      left: -20vw;
+    }
+    .flag2 img {
+      top: -13vw;
+      width: 90%;
+      right: -20vw;
+    }
+  
+    .explore-btn {
+      padding: 0.5rem 1.3rem;
+      font-size: 0.8rem;
+      margin-top: 1.2rem;
+    }
+  }
+
+  :root {
+    --jungle-green-dark: #1a2e05;
+    --jungle-green: #2a4c0c;
+    --jungle-green-light: #4a7c10;
+    --jungle-accent: #f9a826;
+    --jungle-accent-dark: #e08e0b;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 30;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+  }
+  
+  .scroll-indicator:hover {
+    opacity: 1;
+  }
+  
+  .scroll-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .scroll-icon {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  
+  .scroll-dot {
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+    animation: scrollAnim 2s infinite;
+  }
+  
+  @keyframes scrollAnim {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+  
+  
+  
