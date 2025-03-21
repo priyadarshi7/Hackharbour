@@ -1,55 +1,70 @@
-.header{
-    height: 34vw;
-    margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
-    background-size:contain;
-    position: relative;
+.header {
+    /* background-color: #0a0a0a; */
+    background-image: url('../../assets/images/home/headerImg.png');
+    padding: 3rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
 }
-.header-contents{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: fadeIn 3s;
+
+.header-contents {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 60px;
 }
-.header-contents h2{
-    font-weight:500;
+
+.header-contents h2 {
     color: white;
-    font-size: max(4.5vw,22px);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
 }
-.header-contents p{
+
+.header-contents p {
     color: white;
-    font-size: 1vw;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-family: 'Roboto', sans-serif;
 }
-.header-contents button{
+
+.header-contents button {
+    background-color: #2ecc71;
+    color: #0a0a0a;
     border: none;
-    color: #747474;
-    font-weight: 500;
-    padding: 1vw 2.3vw;
-    background: white;
-    font-size: max(1vw,13px);
-    border-radius: 50px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+    font-family: 'Poppins', sans-serif;
 }
-@media (max-width:1050px) {
-    .header{
-        height: 38vw;
-    }
-    .header-contents{
-        max-width: 45%;
-    }
+
+.header-contents button:hover {
+    background-color: #25a55f;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(46, 204, 113, 0.5);
 }
-@media(max-width:750px){
-    .header-contents{
-        max-width: 55%;
+
+.header-contents button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+@media (max-width: 768px) {
+    .header-contents h2 {
+        font-size: 2rem;
     }
-    .header-contents p{
-       display: none;
-    }
-    .header-contents button{
-        padding: 2vw 4vw;
+    
+    .header-contents p {
+        font-size: 1rem;
     }
 }

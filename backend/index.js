@@ -26,7 +26,7 @@ app.use("/api/food", foodRouter)
 app.use("/images",express.static('uploads'))
 app.use("/api/cart", cartRouter)
 app.use("/api/order",orderRouter)
-app.use("/api/comment", commentRouter)
+app.use("/api/comment", commentRouter);
 
 app.get("/", (req, res) => {
     res.send("API Working")

@@ -1,0 +1,88 @@
+{
+  "date": "2025-03-21",
+  "analyses": [
+    {
+      "timestamp": "2025-03-21T06:56:59.684816",
+      "comments": [
+        {
+          "commentId": "67dcb3efcc5d8506a3113f4d",
+          "productId": "67dc9eacad2aa5bc1adaf75c",
+          "productName": "Mugs",
+          "userName": "Priyadarshi Satyakam",
+          "text": "nice",
+          "rating": 2,
+          "createdAt": "2025-03-21T00:33:51.770Z",
+          "sentiment": {
+            "score": 0.4215,
+            "label": "positive",
+            "vaderScores": {
+              "neg": 0.0,
+              "neu": 0.0,
+              "pos": 1.0,
+              "compound": 0.4215
+            },
+            "dominantEmotion": "joy",
+            "adjustedScore": -0.22355,
+            "adjustedLabel": "negative"
+          }
+        },
+        {
+          "commentId": "67dcb3e9cc5d8506a3113f4a",
+          "productId": "67dc9eacad2aa5bc1adaf75c",
+          "productName": "Mugs",
+          "userName": "Priyadarshi Satyakam",
+          "text": "wow",
+          "rating": 5,
+          "createdAt": "2025-03-21T00:33:45.022Z",
+          "sentiment": {
+            "score": 0.5859,
+            "label": "very positive",
+            "vaderScores": {
+              "neg": 0.0,
+              "neu": 0.0,
+              "pos": 1.0,
+              "compound": 0.5859
+            },
+            "dominantEmotion": "joy",
+            "adjustedScore": 0.8757699999999999,
+            "adjustedLabel": "very positive"
+          }
+        }
+      ],
+      "summary": {
+        "newCommentsCount": 2,
+        "averageSentiment": 0.32610999999999996,
+        "sentimentDistribution": {
+          "veryPositive": 1,
+          "positive": 0,
+          "neutral": 0,
+          "negative": 1,
+          "veryNegative": 0
+        }
+      }
+    }
+  ],
+  "productSummaries": {
+    "67dc9eacad2aa5bc1adaf75c": {
+      "productName": "Mugs",
+      "totalComments": 2,
+      "averageSentiment": 0.32610999999999996,
+      "averageRating": 3.5,
+      "sentimentTrend": [
+        {
+          "timestamp": "2025-03-21T06:56:59.684816",
+          "sentiment": -0.22355
+        },
+        {
+          "timestamp": "2025-03-21T06:56:59.684816",
+          "sentiment": 0.8757699999999999
+        }
+      ]
+    }
+  },
+  "overallSentiment": 0.32610999999999996,
+  "totalComments": 2,
+  "insights": [
+    "Overall sentiment is positive. Customers are generally satisfied with the products."
+  ]
+}

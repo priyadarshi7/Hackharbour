@@ -26,5 +26,40 @@
     "assigned_to": null,
     "resolution": null,
     "resolution_date": null
+  },
+  {
+    "complaint_id": "COMP-20250321025627",
+    "message": "I lost my Bag near pond\n",
+    "timestamp": "2025-03-21T02:56:27.800161",
+    "issue_category": "general",
+    "severity": "medium"
+  },
+  {
+    "complaint_id": "COMP-20250321025728",
+    "message": "I lost my bag\n",
+    "timestamp": "2025-03-21T02:57:28.772320",
+    "issue_category": "general",
+    "severity": "medium"
+  },
+  {
+    "complaint_id": "COMP-20250321030346",
+    "message": "help me find lost bag",
+    "timestamp": "2025-03-21T03:03:46.910114",
+    "issue_category": "general",
+    "severity": "medium"
+  },
+  {
+    "complaint_id": "COMP-20250321031628",
+    "message": "i lost my book",
+    "timestamp": "2025-03-21T03:16:28.025591",
+    "issue_category": "general",
+    "severity": "medium"
+  },
+  {
+    "complaint_id": "COMP-20250321031644",
+    "message": "help me",
+    "timestamp": "2025-03-21T03:16:44.368313",
+    "issue_category": "general",
+    "severity": "medium"
   }
 ]

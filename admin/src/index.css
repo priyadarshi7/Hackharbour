@@ -1,10 +1,10 @@
 @import "tailwindcss";
-*{
+/* *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: Outfit;
-}
+} */
 body{
   min-height: 100vh;
   background-color: #FCFCFC;
@@ -30,3 +30,4 @@ hr{
 .cursor{
   cursor: pointer;
 }
+

@@ -1,18 +1,17 @@
-import express from "express";
-import { getCommentsByProduct, addComment, deleteComment, updateComment } from "../controller/comment.controller.js";
+import express from 'express';
+import { getProductComments, addComment, deleteComment, getAllCommentsWithProducts } from '../controller/comment.controller.js';
 
-const router = express.Router();
+const commentRouter = express.Router();
 
-// Get all comments for a specific product
-router.get("/product/:productId", getCommentsByProduct);
+// Get comments for a product
+commentRouter.get("/product/:productId", getProductComments);
 
 // Add a new comment
-router.post("/", addComment);
+commentRouter.post("/add", addComment);
 
 // Delete a comment
-router.delete("/:commentId", deleteComment);
+commentRouter.delete("/delete/:commentId", deleteComment);
 
-// Update a comment
-router.put("/:commentId", updateComment);
+commentRouter.get("/all-with-products", getAllCommentsWithProducts);
 
-export default router;
+export default commentRouter;

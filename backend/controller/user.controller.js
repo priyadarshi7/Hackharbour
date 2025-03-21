@@ -65,4 +65,49 @@ const registerUser = async (req,res) => {
     }
 }
 
-export {loginUser, registerUser}
+const getUserInfo = async (req, res) => {
+  const { userId } = req.params;
+  
+  if (!userId) {
+    return res.status(400).json({ 
+      success: false, 
+      message: "User ID is required" 
+    });
+  }
+
+  try {
+    // Need to use await with findById
+    const user = await userModel.findById(userId);
+    
+    if (!user) {
+      return res.status(404).json({ 
+        success: false, 
+        message: "User not found" 
+      });
+    }
+    
+    // Return user data without password
+    return res.status(200).json({
+      success: true,
+      message: "User information retrieved successfully",
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        points: user.points,
+        // Add other fields based on your user model
+        // but exclude password and other sensitive data
+      }
+    });
+    
+  } catch (error) {
+    console.error("Error fetching user info:", error);
+    return res.status(500).json({ 
+      success: false, 
+      message: "Error retrieving user information",
+      error: error.message 
+    });
+  }
+};
+
+export {loginUser, registerUser, getUserInfo }

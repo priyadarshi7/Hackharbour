@@ -1,5 +1,6 @@
 import orderModel from "../model/order.model.js";
 import userModel from "../model/user.model.js"
+import foodModel from "../model/product.model.js"
 import Stripe from "stripe";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -19,7 +20,19 @@ const placeOrder = async (req, res) => {
             address: req.body.address,
         })
         await newOrder.save();
+            // Update stock for each ordered item
+            for (const item of req.body.items) {
+                await foodModel.findByIdAndUpdate(
+                    item._id, 
+                    { $inc: { stock: -item.quantity } }
+                );
+            }
+
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
+        const user = await userModel.findById(req.body.userId);
+        await userModel.findByIdAndUpdate(req.body.userId, { 
+            points: user.points + (req.body.amount * 2) / 100 
+        });
 
         const line_items = req.body.items.map((item) => ({
             price_data: {
@@ -70,7 +83,20 @@ const placeOrderCod = async (req, res) => {
             payment: true,
         })
         await newOrder.save();
+
+            // Update stock for each ordered item
+            for (const item of req.body.items) {
+                await foodModel.findByIdAndUpdate(
+                    item._id, 
+                    { $inc: { stock: -item.quantity } }
+                );
+            }
+
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
+        const user = await userModel.findById(req.body.userId);
+        await userModel.findByIdAndUpdate(req.body.userId, { 
+            points: user.points + (req.body.amount * 2) / 100 
+        });
 
         res.json({ success: true, message: "Order Placed" });
 
@@ -129,5 +155,20 @@ const verifyOrder = async (req, res) => {
     }
 
 }
+
+// Add this helper function in order.controller.js
+// const checkStock = async (items) => {
+//     for (const item of items) {
+//         const product = await foodModel.findById(item._id);
+//         if (!product || product.stock < item.quantity) {
+//             return {
+//                 success: false,
+//                 message: `Not enough stock for ${product ? product.name : 'item'}`,
+//                 itemId: item._id
+//             };
+//         }
+//     }
+//     return { success: true };
+// }
 
 export { placeOrder, listOrders, userOrders, updateStatus, verifyOrder, placeOrderCod }

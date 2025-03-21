@@ -1,0 +1,232 @@
+.product-detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    animation: fadeIn 0.5s;
+  }
+  
+  .product-detail-back {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+  
+  .product-detail-back img {
+    width: 20px;
+  }
+  
+  .product-detail-back span {
+    font-size: 16px;
+    color: #676767;
+  }
+  
+  .product-detail-content {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .product-detail-left {
+    flex: 1;
+  }
+  
+  .product-detail-img-container {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-detail-image {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
+  }
+  
+  .product-detail-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-detail-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .product-detail-name {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .product-detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .product-detail-rating img {
+    width: 100px;
+  }
+  
+  .product-detail-rating span {
+    color: #676767;
+    font-size: 14px;
+  }
+  
+  .product-detail-price-stock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .product-detail-price {
+    color: #FF4C24;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .product-detail-stock {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 50px;
+  }
+  
+  .product-detail-stock.in-stock {
+    background-color: #e6fff0;
+    color: #00b347;
+  }
+  
+  .product-detail-stock.out-of-stock {
+    background-color: #ffe6e6;
+    color: #ff3333;
+  }
+  
+  .product-detail-description h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .product-detail-description p {
+    color: #676767;
+    line-height: 1.6;
+  }
+  
+  .product-detail-category {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .category-tag {
+    background-color: #f0f0f0;
+    color: #676767;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 14px;
+  }
+  
+  .product-detail-cart {
+    margin-top: 20px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: #FF4C24;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #e63c17;
+    transform: scale(1.05);
+  }
+  
+  .add-to-cart-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .add-to-cart-btn img {
+    width: 20px;
+  }
+  
+  .product-detail-counter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+  }
+  
+  .product-detail-counter button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-detail-counter button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .product-detail-counter img {
+    width: 30px;
+  }
+  
+  .product-detail-counter span {
+    font-size: 18px;
+    font-weight: 500;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  /* Loading and error states */
+  .loading, .not-found {
+    text-align: center;
+    padding: 100px 0;
+    font-size: 18px;
+    color: #676767;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .product-detail-content {
+      flex-direction: column;
+    }
+    
+    .product-detail-left, .product-detail-right {
+      flex: none;
+      width: 100%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

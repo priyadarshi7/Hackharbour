@@ -22,7 +22,8 @@ a {
 } */
 
 .app {
-  width: 80%;
+  width: 95%;
+  /* background-color: black; */
   margin: auto;
 }
 

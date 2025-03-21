@@ -116,7 +116,7 @@ const AboutUs = () => {
       </div>
 
       {/* Objectives Section */}
-      <div className="bg-green-900 text-white py-20 px-4">
+      <div className="bg-green-900 text-white py-20 px-4 border-t-8 border-black border-b-8">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

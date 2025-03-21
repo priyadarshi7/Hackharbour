@@ -1,87 +1,90 @@
 import commentModel from "../model/comment.model.js";
+import mongoose from "mongoose";
 
-// Get all comments for a specific product
-export const getCommentsByProduct = async (req, res) => {
+// Get all comments with product details
+const getAllCommentsWithProducts = async (req, res) => {
   try {
-    const { productId } = req.params;
-    const comments = await commentModel.find({ productId }).sort({ createdAt: -1 });
-    res.status(200).json(comments);
+    // Use aggregation to look up product details for each comment
+    const commentsWithProducts = await commentModel.aggregate([
+      {
+        $lookup: {
+          from: "products", // Your product collection name
+          localField: "productId",
+          foreignField: "_id",
+          as: "productDetails"
+        }
+      },
+      {
+        $unwind: {
+          path: "$productDetails",
+          preserveNullAndEmptyArrays: true
+        }
+      },
+      {
+        $sort: { createdAt: -1 } // Most recent first
+      }
+    ]);
+
+    res.json({ success: true, data: commentsWithProducts });
   } catch (error) {
-    res.status(500).json({ message: "Error fetching comments", error: error.message });
+    console.log(error);
+    res.json({ success: false, message: "Error fetching comments with product details" });
   }
 };
 
-// Add a new comment
-export const addComment = async (req, res) => {
+// Get all comments for a specific product
+const getProductComments = async (req, res) => {
   try {
-    const { productId, userId, username, comment, rating } = req.body;
+    const { productId } = req.params;
     
-    if (!productId || !userId || !username || !comment || !rating) {
-      return res.status(400).json({ message: "All fields are required" });
-    }
+    const comments = await commentModel.find({ productId })
+      .sort({ createdAt: -1 }); // Most recent first
+      
+    res.json({ success: true, data: comments });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error fetching comments" });
+  }
+};
+
+// Add a new comment to a product
+const addComment = async (req, res) => {
+  try {
+    const { productId, userId, userName, text, rating } = req.body;
     
-    const newComment = new commentModel({
+    // Create and save new comment
+    const comment = new commentModel({
       productId,
-      userId,
-      username,
-      comment,
+      userId: mongoose.Types.ObjectId.isValid(userId) ? userId : new mongoose.Types.ObjectId(), // Convert or create new ObjectId,
+      userName,
+      text,
       rating
     });
     
-    const savedComment = await newComment.save();
-    res.status(201).json(savedComment);
+    await comment.save();
+    
+    res.json({ success: true, data: comment, message: "Comment added successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Error adding comment", error: error.message });
+    console.log(error);
+    res.json({ success: false, message: "Error adding comment" });
   }
 };
 
-// Delete a comment
-export const deleteComment = async (req, res) => {
+// Delete a comment (optional - good for moderation)
+const deleteComment = async (req, res) => {
   try {
     const { commentId } = req.params;
-    const { userId } = req.body;
     
-    const comment = await commentModel.findById(commentId);
-    
-    if (!comment) {
-      return res.status(404).json({ message: "Comment not found" });
-    }
-    
-    // Check if the user is the owner of the comment
-    if (comment.userId.toString() !== userId) {
-      return res.status(403).json({ message: "Not authorized to delete this comment" });
-    }
+    // Only allow deletion if user owns the comment or is admin
+    // You'd need to add auth middleware to check this properly
     
     await commentModel.findByIdAndDelete(commentId);
-    res.status(200).json({ message: "Comment deleted successfully" });
+    
+    res.json({ success: true, message: "Comment deleted successfully" });
   } catch (error) {
-    res.status(500).json({ message: "Error deleting comment", error: error.message });
+    console.log(error);
+    res.json({ success: false, message: "Error deleting comment" });
   }
 };
 
-// Update a comment
-export const updateComment = async (req, res) => {
-  try {
-    const { commentId } = req.params;
-    const { userId, comment, rating } = req.body;
-    
-    const existingComment = await commentModel.findById(commentId);
-    
-    if (!existingComment) {
-      return res.status(404).json({ message: "Comment not found" });
-    }
-    
-    // Check if the user is the owner of the comment
-    if (existingComment.userId.toString() !== userId) {
-      return res.status(403).json({ message: "Not authorized to update this comment" });
-    }
-    
-    existingComment.comment = comment || existingComment.comment;
-    existingComment.rating = rating || existingComment.rating;
-    
-    const updatedComment = await existingComment.save();
-    res.status(200).json(updatedComment);
-  } catch (error) {
-    res.status(500).json({ message: "Error updating comment", error: error.message });
-  }
-};
+export { getProductComments, addComment, deleteComment, getAllCommentsWithProducts };

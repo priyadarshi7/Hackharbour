@@ -11,25 +11,26 @@ const commentSchema = new mongoose.Schema({
     ref: 'user', 
     required: true 
   },
-  username: { 
+  userName: { 
     type: String, 
     required: true 
   },
-  comment: { 
+  text: { 
     type: String, 
-    required: true 
+    required: true,
+    trim: true,
+    maxlength: 500
   },
   rating: { 
     type: Number, 
     required: true,
     min: 1,
     max: 5
-  },
-  createdAt: { 
-    type: Date, 
-    default: Date.now 
   }
+}, { 
+  timestamps: true 
 });
 
 const commentModel = mongoose.models.comment || mongoose.model("comment", commentSchema);
+
 export default commentModel;

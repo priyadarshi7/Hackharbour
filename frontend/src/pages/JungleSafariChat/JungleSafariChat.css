@@ -1,0 +1,29 @@
+/* Additional custom styles */
+:root {
+    --safari-green: #047857;
+    --safari-green-dark: #065f46;
+    --safari-green-light: #d1fae5;
+  }
+  
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Animation for chat messages */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .MuiBox-root .MuiBox-root {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  

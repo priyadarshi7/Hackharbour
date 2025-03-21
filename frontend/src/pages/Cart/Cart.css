@@ -1,5 +1,5 @@
 .cart {
-    margin: 100px 0px;
+    margin: 0px 0px;
 }
 
 .cart hr {
@@ -7,6 +7,7 @@
     background-color: #E2E2E2;
     border: none;
 }
+
 
 .cart-items-title {
     display: grid;
@@ -19,6 +20,7 @@
 .cart-items-item {
     margin: 10px 0px;
     color: black;
+    margin-top: 100px;
 }
 
 .cart-items-item img {

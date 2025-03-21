@@ -21,7 +21,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import {NavLink} from "react-router-dom"
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Store', 'Contact'];
+const navItems = ['Home', 'Contact'];
 
 function DrawerAppBar(props) {
   const { window: propWindow } = props;
@@ -145,10 +145,13 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-             <NavLink to={item==='Home'?'/':`${item}`}><Button key={item} sx={{ color: '#fff', textTransform: 'none' }}>
+             <NavLink to={`${item}`}><Button key={item} sx={{ color: '#fff', textTransform: 'none' }}>
                 {item}
               </Button></NavLink> 
             ))}
+             <NavLink to="/"><Button sx={{ color: '#fff', textTransform: 'none' }}>
+                Store
+              </Button></NavLink> 
 
             {!isAuthenticated ? (
               <Button

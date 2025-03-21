@@ -1,0 +1,206 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Sentiment Analysis Report - 2025-03-21</title>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #333; }
+                h1, h2, h3 { color: #2c3e50; }
+                .card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+                .insights { background-color: #f8f9fa; padding: 15px; border-left: 4px solid #4CAF50; }
+                .chart-container { height: 300px; margin-bottom: 30px; }
+                .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+                .stat { font-size: 24px; font-weight: bold; margin: 10px 0; }
+                .label { font-size: 14px; color: #666; }
+                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #f2f2f2; }
+                tr:hover { background-color: #f5f5f5; }
+                .positive { color: #4CAF50; }
+                .negative { color: #F44336; }
+                .neutral { color: #607D8B; }
+            </style>
+        </head>
+        <body>
+            <h1>Sentiment Analysis Report</h1>
+            <p>Date: 2025-03-21 | Total Comments Analyzed: 2</p>
+            
+            <div class="card">
+                <h2>Overall Sentiment</h2>
+                <div class="stat positive">
+                    0.33
+                </div>
+                <div class="chart-container">
+                    <canvas id="overallSentimentChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="card insights">
+                <h2>Key Insights</h2>
+                <ul>
+                    
+                        
+                            <li>Overall sentiment is positive. Customers are generally satisfied with the products.</li>
+                        
+                    
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h2>Product Summaries</h2>
+                <div class="grid">
+                    
+                        <div class="card">
+                            <h3>Mugs</h3>
+                            <div class="stat positive">
+                                0.33
+                            </div>
+                            <div class="label">Average Sentiment</div>
+                            
+                                <div class="stat">3.5</div>
+                                <div class="label">Average Rating</div>
+                            
+                            <p>Total Comments: 2</p>
+                            <div class="chart-container">
+                                <canvas id="trend67dc9eacad2aa5bc1adaf75c"></canvas>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>Recent Comments</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>User</th>
+                            <th>Comment</th>
+                            <th>Rating</th>
+                            <th>Sentiment</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                            
+                                
+                            
+                                
+                            
+                        
+                        
+                        
+                        
+                            <tr>
+                                <td>Mugs</td>
+                                <td>Priyadarshi Satyakam</td>
+                                <td>nice</td>
+                                <td>2</td>
+                                <td class="negative">
+                                    negative 
+                                    (-0.22)
+                                </td>
+                                <td>2025-03-21T00:33:51.770Z</td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Mugs</td>
+                                <td>Priyadarshi Satyakam</td>
+                                <td>wow</td>
+                                <td>5</td>
+                                <td class="positive">
+                                    very positive 
+                                    (0.88)
+                                </td>
+                                <td>2025-03-21T00:33:45.022Z</td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            
+            <script>
+                // Overall sentiment chart
+                const createOverallChart = () => {
+                    const ctx = document.getElementById('overallSentimentChart').getContext('2d');
+                    const analyses = ["2025-03-21T06:56:59.684816"].map((timestamp, index) => ({
+                        timestamp,
+                        sentiment: [0.32610999999999996][index]
+                    }));
+                    
+                    if (analyses.length > 0) {
+                        new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: analyses.map(a => new Date(a.timestamp).toLocaleTimeString()),
+                                datasets: [{
+                                    label: 'Overall Sentiment',
+                                    data: analyses.map(a => a.sentiment),
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    tension: 0.1,
+                                    fill: false
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                scales: {
+                                    y: {
+                                        beginAtZero: false
+                                    }
+                                }
+                            }
+                        });
+                    }
+                };
+                
+                // Product trend charts
+                
+                    const create67dc9eacad2aa5bc1adaf75cChart = () => {
+                        const ctx = document.getElementById('trend67dc9eacad2aa5bc1adaf75c').getContext('2d');
+                        const trend = [{"sentiment": -0.22355, "timestamp": "2025-03-21T06:56:59.684816"}, {"sentiment": 0.8757699999999999, "timestamp": "2025-03-21T06:56:59.684816"}];
+                        
+                        if (trend.length > 0) {
+                            new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: trend.map(t => new Date(t.timestamp).toLocaleTimeString()),
+                                    datasets: [{
+                                        label: 'Sentiment Trend',
+                                        data: trend.map(t => t.sentiment),
+                                        borderColor: 'rgba(54, 162, 235, 1)',
+                                        tension: 0.1,
+                                        fill: false
+                                    }]
+                                },
+                                options: {
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    scales: {
+                                        y: {
+                                            beginAtZero: false
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    };
+                
+                
+                // Initialize all charts
+                window.onload = function() {
+                    createOverallChart();
+                    
+                        create67dc9eacad2aa5bc1adaf75cChart();
+                    
+                };
+            </script>
+        </body>
+        </html>
+        

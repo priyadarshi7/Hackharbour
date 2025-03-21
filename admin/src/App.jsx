@@ -8,6 +8,7 @@ import Orders from './pages/Orders/Orders'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddAutomatic from './pages/AddAutomatic/AddAutomatic'
+import SentimentMain from './pages/sentiment/Sentiment'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/list" element={<List />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/add-automate" element={<AddAutomatic/>}/>
+          <Route path="/sentiment-analysis" element={<SentimentMain/>} />
         </Routes>
       </div>
     </div>

@@ -131,12 +131,12 @@ export default function Home() {
       <div className="birds">
         <img src={Birds || "/placeholder.svg"} alt="Birds" />
       </div>
-      <div className="scroll-indicator">
+      {/* <div className="scroll-indicator">
         <div className="scroll-text">Scroll to Explore</div>
         <div className="scroll-icon">
           <div className="scroll-dot"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

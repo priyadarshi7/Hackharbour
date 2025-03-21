@@ -1,0 +1,323 @@
+{
+  "date": "2025-03-21",
+  "analyses": [
+    {
+      "commentId": "c1",
+      "productId": "p1",
+      "productName": "Super Phone X",
+      "text": "I absolutely love this phone! The camera quality is amazing and the battery lasts all day.",
+      "rating": 5,
+      "sentiment": {
+        "score": 0.7622,
+        "label": "very_positive",
+        "vaderScores": {
+          "neg": 0.0,
+          "neu": 0.602,
+          "pos": 0.398,
+          "compound": 0.862
+        },
+        "textblob": {
+          "polarity": 0.6125,
+          "subjectivity": 0.75
+        },
+        "emotions": {
+          "positive": 0.2
+        },
+        "dominantEmotion": "positive",
+        "features": {
+          "phone": {
+            "mentions": 1,
+            "sentiment": 0.625,
+            "adjectives": []
+          },
+          "i": {
+            "mentions": 2,
+            "sentiment": 0.6125,
+            "adjectives": [
+              "amazing"
+            ]
+          },
+          "quality": {
+            "mentions": 1,
+            "sentiment": 0.6000000000000001,
+            "adjectives": [
+              "amazing"
+            ]
+          },
+          "camera": {
+            "mentions": 1,
+            "sentiment": 0.6000000000000001,
+            "adjectives": [
+              "amazing"
+            ]
+          },
+          "battery": {
+            "mentions": 1,
+            "sentiment": 0.6000000000000001,
+            "adjectives": [
+              "amazing"
+            ]
+          }
+        },
+        "entities": {
+          "DATE": [
+            "all day"
+          ]
+        },
+        "intent": "praise",
+        "keyPhrases": [
+          {
+            "text": "I absolutely love this phone!",
+            "sentiment": 0.625
+          },
+          {
+            "text": "The camera quality is amazing and the battery lasts all day.",
+            "sentiment": 0.6000000000000001
+          }
+        ],
+        "competitors": null,
+        "criticality": "low",
+        "adjustedScore": 0.9286599999999999,
+        "adjustedLabel": "very_positive"
+      }
+    },
+    {
+      "commentId": "c2",
+      "productId": "p1",
+      "productName": "Super Phone X",
+      "text": "Decent phone but the battery drains too quickly. The camera is great though!",
+      "rating": 3,
+      "sentiment": {
+        "score": 0.6722600000000001,
+        "label": "very_positive",
+        "vaderScores": {
+          "neg": 0.0,
+          "neu": 0.669,
+          "pos": 0.331,
+          "compound": 0.7871
+        },
+        "textblob": {
+          "polarity": 0.5,
+          "subjectivity": 0.6388888888888888
+        },
+        "emotions": {
+          "positive": 0.1
+        },
+        "dominantEmotion": "positive",
+        "features": {
+          "battery": {
+            "mentions": 1,
+            "sentiment": 0.25,
+            "adjectives": [
+              "decent"
+            ]
+          },
+          "phone": {
+            "mentions": 1,
+            "sentiment": 0.25,
+            "adjectives": [
+              "decent"
+            ]
+          },
+          "camera": {
+            "mentions": 1,
+            "sentiment": 1.0,
+            "adjectives": [
+              "great"
+            ]
+          }
+        },
+        "entities": {},
+        "intent": "praise",
+        "keyPhrases": [
+          {
+            "text": "The camera is great though!",
+            "sentiment": 1.0
+          }
+        ],
+        "competitors": null,
+        "criticality": "low",
+        "adjustedScore": 0.20167800000000002,
+        "adjustedLabel": "positive"
+      }
+    },
+    {
+      "commentId": "c3",
+      "productId": "p2",
+      "productName": "Ultra Tablet Pro",
+      "text": "This tablet is terrible. It crashes constantly and customer support is unhelpful.",
+      "rating": 1,
+      "sentiment": {
+        "score": -0.26162,
+        "label": "negative",
+        "vaderScores": {
+          "neg": 0.196,
+          "neu": 0.633,
+          "pos": 0.171,
+          "compound": -0.1027
+        },
+        "textblob": {
+          "polarity": -0.5,
+          "subjectivity": 0.6666666666666666
+        },
+        "emotions": {
+          "negative": 0.1
+        },
+        "dominantEmotion": "negative",
+        "features": {
+          "tablet": {
+            "mentions": 1,
+            "sentiment": -1.0,
+            "adjectives": [
+              "terrible"
+            ]
+          },
+          "support": {
+            "mentions": 1,
+            "sentiment": 0.0,
+            "adjectives": [
+              "unhelpful"
+            ]
+          },
+          "it": {
+            "mentions": 1,
+            "sentiment": 0.0,
+            "adjectives": [
+              "unhelpful"
+            ]
+          }
+        },
+        "entities": {},
+        "intent": "complaint",
+        "keyPhrases": [
+          {
+            "text": "This tablet is terrible.",
+            "sentiment": -1.0
+          }
+        ],
+        "competitors": null,
+        "criticality": "high",
+        "adjustedScore": -0.778486,
+        "adjustedLabel": "very_negative"
+      }
+    }
+  ],
+  "productSummaries": {},
+  "overallSentiment": null,
+  "sentimentDistribution": {},
+  "totalComments": 3,
+  "insights": [
+    {
+      "type": "positive_driver",
+      "text": "'camera' is the top positive feature with 2 mentions and 0.80 sentiment.",
+      "score": 1.6,
+      "feature": "camera"
+    },
+    {
+      "type": "critical_issues",
+      "text": "Found 1 high-priority comments requiring attention.",
+      "score": 0.9,
+      "count": 1
+    },
+    {
+      "type": "overall_sentiment",
+      "text": "Overall sentiment is positive with an average score of 0.39.",
+      "score": 0.3909466666666667
+    }
+  ],
+  "criticalities": [],
+  "topicAnalysis": {},
+  "featureAnalysis": {},
+  "competitiveAnalysis": {},
+  "userSegmentation": {},
+  "trendsOverTime": {},
+  "productComparisons": {},
+  "keyPhrases": {},
+  "sentimentDrivers": {
+    "positive": [
+      {
+        "feature": "camera",
+        "mentions": 2,
+        "avgSentiment": 0.8,
+        "impact": 1.6,
+        "positive": 2,
+        "negative": 0,
+        "examples": [
+          {
+            "commentId": "c2",
+            "text": "Decent phone but the battery drains too quickly. The camera is great though!",
+            "sentiment": 1.0
+          },
+          {
+            "commentId": "c1",
+            "text": "I absolutely love this phone! The camera quality is amazing and the battery lasts all day.",
+            "sentiment": 0.6000000000000001
+          }
+        ]
+      },
+      {
+        "feature": "i",
+        "mentions": 2,
+        "avgSentiment": 0.6125,
+        "impact": 1.225,
+        "positive": 2,
+        "negative": 0,
+        "examples": [
+          {
+            "commentId": "c1",
+            "text": "I absolutely love this phone! The camera quality is amazing and the battery lasts all day.",
+            "sentiment": 0.6125
+          }
+        ]
+      },
+      {
+        "feature": "phone",
+        "mentions": 2,
+        "avgSentiment": 0.4375,
+        "impact": 0.875,
+        "positive": 2,
+        "negative": 0,
+        "examples": [
+          {
+            "commentId": "c1",
+            "text": "I absolutely love this phone! The camera quality is amazing and the battery lasts all day.",
+            "sentiment": 0.625
+          },
+          {
+            "commentId": "c2",
+            "text": "Decent phone but the battery drains too quickly. The camera is great though!",
+            "sentiment": 0.25
+          }
+        ]
+      },
+      {
+        "feature": "battery",
+        "mentions": 2,
+        "avgSentiment": 0.42500000000000004,
+        "impact": 0.8500000000000001,
+        "positive": 2,
+        "negative": 0,
+        "examples": [
+          {
+            "commentId": "c1",
+            "text": "I absolutely love this phone! The camera quality is amazing and the battery lasts all day.",
+            "sentiment": 0.6000000000000001
+          },
+          {
+            "commentId": "c2",
+            "text": "Decent phone but the battery drains too quickly. The camera is great though!",
+            "sentiment": 0.25
+          }
+        ]
+      }
+    ],
+    "negative": [],
+    "mixed": [],
+    "neutral": []
+  },
+  "recommendationNetwork": {
+    "nodes": [],
+    "links": []
+  },
+  "anomalies": []
+}

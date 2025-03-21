@@ -1,54 +1,160 @@
-.explore-menu{
+.explore-menu {
+    padding: 2.5rem 1rem;
+    /* background-color: #0a0a0a; */
+    background-image: url('../../assets/images/home/tigerImg.png');
+    background-size: contain;
+}
+
+.explore-menu h1 {
+    color: rgb(50, 221, 67);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.explore-menu-text {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.explore-menu-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #2ecc71 #1e1e1e; /* Firefox */
+    max-width: 100%;
+    margin: 0 auto 2rem auto;
+}
+
+/* Custom scrollbar for webkit browsers */
+.explore-menu-list::-webkit-scrollbar {
+    height: 6px;
+}
+
+.explore-menu-list::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 10px;
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb {
+    background: #2ecc71;
+    border-radius: 10px;
+}
+
+.explore-menu-list-item {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-.explore-menu h1{
-    color: #262626;
-    font-weight: 500;
-}
-.explore-menu-text{
-    max-width: 60%;
-    color: #808080;
-}
-.explore-menu-list{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    text-align: center;
-    margin: 20px 0px;
-    overflow-x: scroll;
-}
-.explore-menu-list::-webkit-scrollbar{
-    display: none;
-}
-.explore-menu-list-item img{
-    width: 7.5vw;
-    min-width: 80px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    min-width: 120px;
+    margin: 0 0.5rem;
+    flex-shrink: 0;
+}
+
+.explore-menu-list-item:hover {
+    transform: translateY(-5px);
+}
+
+.explore-menu-list-item img {
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    transition: 0.2s;
+    object-fit: cover;
+    border: 3px solid #1e1e1e;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.explore-menu-list-item .active{
-    border: 4px solid tomato;
-    padding: 2px;
+
+.explore-menu-list-item img.active {
+    border: 3px solid #2ecc71;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.6);
 }
-.explore-menu-list-item p{
-    margin-top: 10px;
-    color: #747474;
-    font-size: max(1.4vw,16px);
-    cursor: pointer;
+
+.explore-menu-list-item p {
+    margin-top: 0.8rem;
+    color: #e0e0e0;
+    font-weight: 500;
+    text-align: center;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
 }
-.explore-menu hr{
-    margin: 10px 0px;
-    height: 2px;
-    background-color: #E2E2E2;
+
+.explore-menu hr {
     border: none;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(46, 204, 113, 0) 0%, rgba(46, 204, 113, 0.5) 50%, rgba(46, 204, 113, 0) 100%);
+    margin: 1rem auto;
+    width: 90%;
 }
-@media (max-width:1050px) {
-    .explore-menu-text{
-        max-width: 100%;
-        font-size: 14px;
+
+/* Scroll indicators */
+.explore-menu-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.scroll-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #2ecc71;
+    font-size: 1.5rem;
+    border: 2px solid #2ecc71;
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+    background-color: rgba(46, 204, 113, 0.2);
+}
+
+.scroll-left {
+    left: 5px;
+}
+
+.scroll-right {
+    right: 5px;
+}
+
+@media (max-width: 768px) {
+    .explore-menu h1 {
+        font-size: 1.8rem;
+    }
+    
+    .explore-menu-list-item {
+        min-width: 100px;
+    }
+    
+    .explore-menu-list-item img {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .scroll-indicator {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
     }
 }

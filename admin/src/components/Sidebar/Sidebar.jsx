@@ -51,6 +51,17 @@ const Sidebar = () => {
           </div>
           <p>Orders</p>
         </NavLink>
+
+                
+        <NavLink 
+          to='/sentiment-analysis' 
+          className={({ isActive }) => isActive ? "sidebar-option active" : "sidebar-option"}
+        >
+          <div className="sidebar-icon">
+            <img src={assets.order_icon} alt="" />
+          </div>
+          <p>Sentiment Analysis</p>
+        </NavLink>
       </div>
       
       <div className="sidebar-footer">
