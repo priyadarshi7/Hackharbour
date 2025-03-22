@@ -3,6 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import DashboardIcon from "@mui/icons-material/Dashboard"
 import NotificationsIcon from "@mui/icons-material/Notifications"
 import AccountCircleIcon from "@mui/icons-material/AccountCircle"
+import React from "react"
 
 const Header = () => {
   const theme = useTheme()

@@ -1,5 +1,6 @@
 import { Paper, Typography, Box } from "@mui/material"
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts"
+import React from "react"
 
 const SentimentDistribution = ({ positive, neutral, negative }) => {
   const data = [

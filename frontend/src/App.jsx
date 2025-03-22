@@ -9,19 +9,15 @@ import Verify from './pages/Verify/Verify'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import { ToastContainer } from 'react-toastify'
 import StoreNavbar from './components/StoreNavbar/StoreNavbar'
-import JungleSafariChatbot from './components/JungleSafariChatBot/JungleSafariChatBot'
-import JungleSafariChat from './pages/JungleSafariChat/JungleSafariChat'
-import ChatInterface from './components/ChatInterface'
-import PaymentPage from './components/PaymentModal'
-import PaymentSuccess from './components/PaymentSuccess'
-import InvoicePage from './components/InvoiceView'
-import ComplaintForm from './components/ComplaintForm'
 import './App.css'
-import Header from './components/Header'
+import Header from './components/Header/Header'
 import ProductDetail from './components/ProductDetail/ProductDetail'
 import Footer from './components/Footer/Footer'
 import VRStore from './VR/VR'
 import UserProfile from './components/Profile/Profile'
+import TicketSelector from './TicketChatbotComponents/TicketSelector'
+import TicketChat from './pages/TicketChat/TicketChat'
+import ComplaintBot from './components/CommplaintBot/ComplaintBot'
 
 export default function App() {
   const location = useLocation();
@@ -46,14 +42,10 @@ export default function App() {
         <Route path="/myorders" element={<MyOrders />} />
         <Route path="/verify" element={<Verify />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        {/* <Route path="/chat/tickets" element={<JungleSafariChat/>} /> */}
-        <Route path="/chat/tickets" element={<ChatInterface/>} />
-            <Route path="/payment" element={<PaymentPage />} />
-            <Route path="/payment-success/:bookingId" element={<PaymentSuccess />} />
-            <Route path="/invoice/:bookingId" element={<InvoicePage />} />
-            <Route path="/complaint" element={<ComplaintForm />} />
             <Route path="/vr" element={<VRStore/>} />
             <Route path="/profile/:userId" element={<UserProfile/>} />
+            <Route path="/ticket" element={<TicketChat/>} />
+            <Route path="/complaint" element={<ComplaintBot/>} />
       </Routes>
       {/* <Footer/> */}
     </>

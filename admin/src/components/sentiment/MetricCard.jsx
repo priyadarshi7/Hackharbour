@@ -1,4 +1,5 @@
 import { Paper, Box, Typography } from "@mui/material"
+import React from "react"
 
 const MetricCard = ({ title, value, percentage, icon, color }) => {
   return (

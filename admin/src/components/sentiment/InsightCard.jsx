@@ -4,6 +4,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import WarningIcon from "@mui/icons-material/Warning"
 import ErrorIcon from "@mui/icons-material/Error"
 import LightbulbIcon from "@mui/icons-material/Lightbulb"
+import React from "react"
 
 const InsightCard = ({ type, text }) => {
   const getTypeConfig = () => {

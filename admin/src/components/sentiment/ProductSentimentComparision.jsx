@@ -1,5 +1,6 @@
 import { Paper, Typography, useTheme, useMediaQuery } from "@mui/material"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts"
+import React from "react"
 
 const ProductSentimentComparison = ({ products }) => {
   const theme = useTheme()

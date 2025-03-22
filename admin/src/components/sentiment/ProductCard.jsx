@@ -1,5 +1,6 @@
 import { Paper, Typography, Box, Divider, LinearProgress, Grid, Rating } from "@mui/material"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
+import React from "react"
 
 const ProductCard = ({ product }) => {
   // Convert ratings object to array for chart

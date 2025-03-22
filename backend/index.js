@@ -7,6 +7,7 @@ import 'dotenv/config'
 import cartRouter from "./route/cart.route.js"
 import orderRouter from "./route/order.route.js"
 import commentRouter from "./route/comment.route.js"
+import complaintRouter from "./route/complaint.route.js"
 
 // app config
 const app = express()
@@ -18,7 +19,7 @@ app.use(express.json())
 app.use(cors())
 
 // db connection
-dbConnect("mongodb://127.0.0.1:27017/jungle")
+dbConnect("mongodb+srv://priyadarshi:Tushky3@cluster0.rgiu1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 // api endpoints
 app.use("/api/user", userRouter)
@@ -27,6 +28,7 @@ app.use("/images",express.static('uploads'))
 app.use("/api/cart", cartRouter)
 app.use("/api/order",orderRouter)
 app.use("/api/comment", commentRouter);
+app.use('/api/complaints', complaintRouter);
 
 app.get("/", (req, res) => {
     res.send("API Working")

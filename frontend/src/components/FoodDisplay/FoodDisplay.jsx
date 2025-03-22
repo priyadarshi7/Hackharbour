@@ -6,7 +6,7 @@ const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
   
   // Filter items based on category
-  const filteredItems = food_list.filter(item => 
+  const filteredItems = food_list?.filter(item => 
     category === "All" || category === item.category
   );
 
@@ -21,7 +21,7 @@ const FoodDisplay = ({ category }) => {
       </div>
 
       {/* Empty state message when no items match the filter */}
-      {filteredItems.length === 0 && (
+      {filteredItems?.length === 0 && (
         <div className="text-center py-16">
           <p className="text-gray-500 text-lg">No Products found in this category.</p>
           <button 
@@ -35,7 +35,7 @@ const FoodDisplay = ({ category }) => {
 
       {/* Food items grid with responsive columns */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-        {filteredItems.map((item) => (
+        {filteredItems?.map((item) => (
           <FoodItem 
             key={item._id} 
             image={item.image} 
@@ -48,7 +48,7 @@ const FoodDisplay = ({ category }) => {
       </div>
       
       {/* Items counter at the bottom */}
-      {filteredItems.length > 0 && (
+      {filteredItems?.length > 0 && (
         <p className="mt-6 text-sm text-gray-500 text-right">
           Showing {filteredItems.length} {filteredItems.length === 1 ? 'item' : 'items'}
         </p>

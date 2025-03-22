@@ -6,6 +6,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 
     const url = "http://localhost:4000"
+    // const url = "https://9b10-117-250-161-222.ngrok-free.app"
     const [food_list, setFoodList] = useState([]);
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("")
@@ -48,8 +49,19 @@ const StoreContextProvider = (props) => {
     }
 
     const fetchFoodList = async () => {
-        const response = await axios.get(url + "/api/food/list");
-        setFoodList(response.data.data)
+        try {
+            console.log("Fetching food list...");  // Debugging log
+            const response = await axios.get(url + "/api/food/list");
+            console.log("Response received:", response.data);  // Debugging log
+    
+            if (response.data && response.data.data) {
+                setFoodList(response.data.data);
+            } else {
+                console.error("Food list response is not in expected format:", response.data);
+            }
+        } catch (error) {
+            console.error("Error fetching food list:", error);
+        }
     }
 
     const loadCartData = async (token) => {

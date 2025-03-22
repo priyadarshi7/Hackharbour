@@ -1,0 +1,130 @@
+{
+  "hash": "ad9ab443",
+  "configHash": "81b03533",
+  "lockfileHash": "ad45172d",
+  "browserHash": "a07c19a2",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "1b25778e",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "0fa8d643",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "a1196a83",
+      "needsInterop": false
+    },
+    "react-toastify": {
+      "src": "../../node_modules/react-toastify/dist/index.mjs",
+      "file": "react-toastify.js",
+      "fileHash": "ce3b505a",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "30fa6704",
+      "needsInterop": false
+    },
+    "recharts": {
+      "src": "../../node_modules/recharts/es6/index.js",
+      "file": "recharts.js",
+      "fileHash": "18f46a9c",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "714a1c1b",
+      "needsInterop": false
+    },
+    "@mui/material": {
+      "src": "../../node_modules/@mui/material/index.js",
+      "file": "@mui_material.js",
+      "fileHash": "2e0eec87",
+      "needsInterop": false
+    },
+    "@mui/icons-material/SentimentSatisfiedAlt": {
+      "src": "../../node_modules/@mui/icons-material/esm/SentimentSatisfiedAlt.js",
+      "file": "@mui_icons-material_SentimentSatisfiedAlt.js",
+      "fileHash": "3032b365",
+      "needsInterop": false
+    },
+    "@mui/icons-material/SentimentNeutral": {
+      "src": "../../node_modules/@mui/icons-material/esm/SentimentNeutral.js",
+      "file": "@mui_icons-material_SentimentNeutral.js",
+      "fileHash": "0966ceda",
+      "needsInterop": false
+    },
+    "@mui/icons-material/SentimentVeryDissatisfied": {
+      "src": "../../node_modules/@mui/icons-material/esm/SentimentVeryDissatisfied.js",
+      "file": "@mui_icons-material_SentimentVeryDissatisfied.js",
+      "fileHash": "f3b05857",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Info": {
+      "src": "../../node_modules/@mui/icons-material/esm/Info.js",
+      "file": "@mui_icons-material_Info.js",
+      "fileHash": "a6d0dc03",
+      "needsInterop": false
+    },
+    "@mui/icons-material/CheckCircle": {
+      "src": "../../node_modules/@mui/icons-material/esm/CheckCircle.js",
+      "file": "@mui_icons-material_CheckCircle.js",
+      "fileHash": "bfaae1bd",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Warning": {
+      "src": "../../node_modules/@mui/icons-material/esm/Warning.js",
+      "file": "@mui_icons-material_Warning.js",
+      "fileHash": "877fc542",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Error": {
+      "src": "../../node_modules/@mui/icons-material/esm/Error.js",
+      "file": "@mui_icons-material_Error.js",
+      "fileHash": "14ee1cf7",
+      "needsInterop": false
+    },
+    "@mui/icons-material/Lightbulb": {
+      "src": "../../node_modules/@mui/icons-material/esm/Lightbulb.js",
+      "file": "@mui_icons-material_Lightbulb.js",
+      "fileHash": "72bfdc75",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-EYVTZQDQ": {
+      "file": "chunk-EYVTZQDQ.js"
+    },
+    "chunk-C6WWHQR7": {
+      "file": "chunk-C6WWHQR7.js"
+    },
+    "chunk-ACWLIFFY": {
+      "file": "chunk-ACWLIFFY.js"
+    },
+    "chunk-7AGF325U": {
+      "file": "chunk-7AGF325U.js"
+    },
+    "chunk-2KHBIA62": {
+      "file": "chunk-2KHBIA62.js"
+    },
+    "chunk-TKHB4QMX": {
+      "file": "chunk-TKHB4QMX.js"
+    },
+    "chunk-YLDSBLSF": {
+      "file": "chunk-YLDSBLSF.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
+}
